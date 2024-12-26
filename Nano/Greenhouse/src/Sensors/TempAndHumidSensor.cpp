@@ -1,17 +1,17 @@
-#include "Sensors/AHT10/AHT10.h"
+#include "Sensors/TempAndHumidSensor.h"
 
-AHT10::AHT10(int measurementCount = 10, int measurementDelay = 500)
+TempAndHumidSensor::TempAndHumidSensor(int measurementCount = 10, int measurementDelay = 500)
 {
     this->measurementCount = measurementCount;
     this->measurementDelay = measurementDelay;
 }
 
-void AHT10::Init()
+void TempAndHumidSensor::Init()
 {
     this->aht.begin();
 }
 
-AHT10::Data AHT10::Get_mean_data()
+TempAndHumidSensor::Data TempAndHumidSensor::Get_mean_data()
 {
     float mean_temperature = 0.0;
     float mean_humidity = 0.0;

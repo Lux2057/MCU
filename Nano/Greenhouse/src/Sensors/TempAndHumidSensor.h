@@ -4,7 +4,7 @@
 #include <Arduino.h>
 #include <Adafruit_AHTX0.h>
 
-class AHT10
+class TempAndHumidSensor
 {
 private:
     Adafruit_AHTX0 aht;
@@ -12,7 +12,7 @@ private:
     int measurementDelay;
 
 public:
-    AHT10(int measurementCount = 10, int measurementDelay = 500);
+    TempAndHumidSensor(int measurementCount = 10, int measurementDelay = 500);
 
     struct Data
     {

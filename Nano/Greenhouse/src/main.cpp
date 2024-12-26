@@ -1,7 +1,12 @@
 #include <Arduino.h>
+#include "LED/LED.h"
+#include "Sensors/AHT10/AHT10.h"
 
 #define PUMP_MOSFET_PIN 2
 #define LED_MOSFET_PIN 3
+
+LED led = LED();
+AHT10 aht10 = AHT10(10, 50);
 
 void setup()
 {
@@ -12,34 +17,20 @@ void setup()
   digitalWrite(PUMP_MOSFET_PIN, LOW);
   digitalWrite(LED_MOSFET_PIN, LOW);
   digitalWrite(LED_BUILTIN, LOW);
-}
 
-void blink(int duration, int interval, int loopCount)
-{
-  digitalWrite(LED_BUILTIN, LOW);
-  
-  int stepDuration = duration / loopCount;
+  aht10.Init();
 
-  for (int i = 0; i < loopCount; i++)
-  {
-    digitalWrite(LED_BUILTIN, HIGH);
-    delay(stepDuration);
-    digitalWrite(LED_BUILTIN, LOW);
-    delay(interval);
-  }
+  Serial.begin(9600);
 }
 
 void loop()
 {
-  digitalWrite(PUMP_MOSFET_PIN, HIGH);
-  blink(5000, 100, 10);
-  digitalWrite(PUMP_MOSFET_PIN, LOW);
+  AHT10::Data data = aht10.Get_mean_data();
 
-  delay(2000);
-
-  digitalWrite(LED_MOSFET_PIN, HIGH);
-  blink(5000, 100, 30);
-  digitalWrite(LED_MOSFET_PIN, LOW);
-
-  delay(1000);
+  Serial.print("Temperature: ");
+  Serial.print(data.temperature);
+  Serial.println(" degrees C");
+  Serial.print("Humidity: ");
+  Serial.print(data.humidity);
+  Serial.println("% rH");
 }

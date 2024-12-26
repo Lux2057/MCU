@@ -1,6 +1,6 @@
 #include "Sensors/TempAndHumidSensor.h"
 
-TempAndHumidSensor::TempAndHumidSensor(int measurementCount = 10, int measurementDelay = 500)
+TempAndHumidSensor::TempAndHumidSensor(int measurementCount = 10, int measurementDelay = 50)
 {
     this->measurementCount = measurementCount;
     this->measurementDelay = measurementDelay;
@@ -9,6 +9,7 @@ TempAndHumidSensor::TempAndHumidSensor(int measurementCount = 10, int measuremen
 void TempAndHumidSensor::Init()
 {
     this->aht.begin();
+    delay(500);
 }
 
 TempAndHumidSensor::Data TempAndHumidSensor::Get_mean_data()

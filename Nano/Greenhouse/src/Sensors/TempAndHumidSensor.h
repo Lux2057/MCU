@@ -1,5 +1,5 @@
-#ifndef AHT10_H
-#define AHT10_H
+#ifndef TEMPANDHUMID_H
+#define TEMPANDHUMID_H
 
 #include <Arduino.h>
 #include <Adafruit_AHTX0.h>
@@ -12,7 +12,7 @@ private:
     int measurementDelay;
 
 public:
-    TempAndHumidSensor(int measurementCount = 10, int measurementDelay = 500);
+    TempAndHumidSensor(int measurementCount = 10, int measurementDelay = 50);
 
     struct Data
     {

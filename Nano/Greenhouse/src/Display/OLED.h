@@ -2,17 +2,18 @@
 #define OLED_H
 
 #include <Arduino.h>
+#include <Wire.h>
+#include <Adafruit_GFX.h>
+#include <Adafruit_SSD1306.h>
 
 class OLED
 {
-public:
-    struct Point
-    {
-        int X;
-        int Y;
-    };
+private:
+    Adafruit_SSD1306 display;
 
-    void Print(Point start, int lineHeight, String lines[], int linesCount);
+public:
+    void Print(String lines[], int linesCount);    
+    void Clear();
     void Init();
 };
 

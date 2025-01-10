@@ -1,0 +1,6 @@
+obj/
+bin/
+.vs/
+deployment/
+__pycache__/
+.metadata/

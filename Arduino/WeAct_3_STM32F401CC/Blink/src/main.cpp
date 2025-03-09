@@ -22,6 +22,6 @@ void blink(int litDuration, int litInterval, int loopCount)
 
 void loop()
 {
-  blink(200, 100, 4);
+  blink(150, 50, 2);
   delay(1000);
 }

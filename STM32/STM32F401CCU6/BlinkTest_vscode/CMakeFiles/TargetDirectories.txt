@@ -1,0 +1,6 @@
+D:/Workspace/MCU/STM32/STM32F401CCU6/BlinkTest_vscode/CMakeFiles/BlinkTest_vscode.dir
+D:/Workspace/MCU/STM32/STM32F401CCU6/BlinkTest_vscode/CMakeFiles/edit_cache.dir
+D:/Workspace/MCU/STM32/STM32F401CCU6/BlinkTest_vscode/CMakeFiles/rebuild_cache.dir
+D:/Workspace/MCU/STM32/STM32F401CCU6/BlinkTest_vscode/cmake/stm32cubemx/CMakeFiles/STM32_Drivers.dir
+D:/Workspace/MCU/STM32/STM32F401CCU6/BlinkTest_vscode/cmake/stm32cubemx/CMakeFiles/edit_cache.dir
+D:/Workspace/MCU/STM32/STM32F401CCU6/BlinkTest_vscode/cmake/stm32cubemx/CMakeFiles/rebuild_cache.dir
